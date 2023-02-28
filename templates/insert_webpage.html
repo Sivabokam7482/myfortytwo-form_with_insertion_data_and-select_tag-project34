@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpage</title>
+    <style>
+         *
+         {
+            background-color: rgb(102, 10, 110);
+         }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>insert_Webpage</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+                <label for="topic">topic_name</label>
+                <select name="topic" id="topic">
+                    {% for T in topic %}
+                        <option value="{{T}}" >{{ T.topic_name }}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                <br><br>
+                    <label for="url">url</label>
+                    <input type="url" name="url" id="url">
+                <br><br>
+                <input type="submit" value="insert_Webpage">
+                
+        </form>
+    </center>
+</body>
+</html>
